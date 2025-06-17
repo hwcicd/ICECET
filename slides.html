@@ -123,9 +123,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a>
   <ul class="collapse">
-  <li><a href="#hdls" id="toc-hdls" class="nav-link" data-scroll-target="#hdls">HDLs</a></li>
-  <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source">Open Source</a></li>
-  <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions">GitHub Actions</a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
+  <li><a href="#state-of-play" id="toc-state-of-play" class="nav-link" data-scroll-target="#state-of-play">State of Play</a></li>
   </ul></li>
   <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline">Outline</a></li>
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
@@ -190,21 +189,40 @@ ul.task-list li input[type="checkbox"] {
 <li>Amber Huffman, Principal Engineer, Google Cloud</li>
 </ul>
 </div>
-<p>:::{column width=“75%”}</p>
+<p>:::{column width=“25%”}</p>
 <div style="border-radius: 50%">
 <p><img src="https://www.semi.org/sites/semi.org/files/styles/webp/public/inline-images/biophoto-gsmc-_0000_amber-huffman.png.webp"></p>
 </div>
-<section id="hdls" class="level2">
-<h2 class="anchored" data-anchor-id="hdls">HDLs</h2>
-</section>
-<section id="open-source" class="level2">
-<h2 class="anchored" data-anchor-id="open-source">Open Source</h2>
+<p>:::</p>
+<p>::::</p>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
 <ul>
-<li>RISC-V</li>
+<li>With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.
+<ul>
+<li>Also called “The Heat Wall”</li>
+</ul></li>
+<li>An explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).
+<ul>
+<li>In 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.</li>
+</ul></li>
+<li>The 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to <strong>specifications</strong> of hardware in HDLs.</li>
 </ul>
 </section>
-<section id="github-actions" class="level2">
-<h2 class="anchored" data-anchor-id="github-actions">GitHub Actions</h2>
+<section id="state-of-play" class="level2">
+<h2 class="anchored" data-anchor-id="state-of-play">State of Play</h2>
+<ul>
+<li>Major advances in open source hardware.
+<ul>
+<li>RISC-V open source CPUs</li>
+<li>OpenTitan/Caliptra open source root of trust (RoT)</li>
+</ul></li>
+<li>Major advances in CI/CD formulations for open source hardware
+<ul>
+<li>GitHub Actions for CI/CD</li>
+<li>Hardware Specification mining for HDLs</li>
+</ul></li>
+</ul>
 </section>
 </section>
 <section id="outline" class="level1">

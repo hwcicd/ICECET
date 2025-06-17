@@ -4,17 +4,27 @@
     "href": "slides.html",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": ":::{column width=“75%”}\nNone of us is as smart as all of us.\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n:::{column width=“75%”}\n\n\n\n\n\n\n\n\n\nRISC-V",
+    "text": ":::{column width=“75%”}\nNone of us is as smart as all of us.\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n:::{column width=“25%”}\n\n\n\n:::\n::::\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs",
     "crumbs": [
       "Test, Build, Deploy"
     ]
   },
   {
-    "objectID": "slides.html#open-source",
-    "href": "slides.html#open-source",
+    "objectID": "slides.html#problem-statement",
+    "href": "slides.html#problem-statement",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "RISC-V",
+    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#state-of-play",
+    "href": "slides.html#state-of-play",
+    "title": "Test, Build, Deploy",
+    "section": "",
+    "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs",
     "crumbs": [
       "Test, Build, Deploy"
     ]
@@ -120,25 +130,18 @@
     ]
   },
   {
-    "objectID": "slides.rjs.html#hdls",
-    "href": "slides.rjs.html#hdls",
+    "objectID": "slides.rjs.html#problem-statement",
+    "href": "slides.rjs.html#problem-statement",
     "title": "Test, Build, Deploy",
-    "section": "HDLs",
-    "text": "HDLs"
+    "section": "Problem Statement",
+    "text": "Problem Statement\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs."
   },
   {
-    "objectID": "slides.rjs.html#open-source",
-    "href": "slides.rjs.html#open-source",
+    "objectID": "slides.rjs.html#state-of-play",
+    "href": "slides.rjs.html#state-of-play",
     "title": "Test, Build, Deploy",
-    "section": "Open Source",
-    "text": "Open Source\n\nRISC-V"
-  },
-  {
-    "objectID": "slides.rjs.html#github-actions",
-    "href": "slides.rjs.html#github-actions",
-    "title": "Test, Build, Deploy",
-    "section": "GitHub Actions",
-    "text": "GitHub Actions"
+    "section": "State of Play",
+    "text": "State of Play\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs"
   },
   {
     "objectID": "slides.rjs.html#graph",
