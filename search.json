@@ -1,0 +1,223 @@
+[
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Test, Build, Deploy",
+    "section": "",
+    "text": "Dennard Scaling\n\n\n\n\n\nRISC-V",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#hdls",
+    "href": "slides.html#hdls",
+    "title": "Test, Build, Deploy",
+    "section": "",
+    "text": "Dennard Scaling",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#open-source",
+    "href": "slides.html#open-source",
+    "title": "Test, Build, Deploy",
+    "section": "",
+    "text": "RISC-V",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#graph",
+    "href": "slides.html#graph",
+    "title": "Test, Build, Deploy",
+    "section": "Graph",
+    "text": "Graph",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#inputs",
+    "href": "slides.html#inputs",
+    "title": "Test, Build, Deploy",
+    "section": "Inputs",
+    "text": "Inputs\n\nTestbench\nSimulator\nTrace\nTranslator\nMiner",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#outputs",
+    "href": "slides.html#outputs",
+    "title": "Test, Build, Deploy",
+    "section": "Outputs",
+    "text": "Outputs",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#myrtha",
+    "href": "slides.html#myrtha",
+    "title": "Test, Build, Deploy",
+    "section": "Myrtha",
+    "text": "Myrtha",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#iverilog",
+    "href": "slides.html#iverilog",
+    "title": "Test, Build, Deploy",
+    "section": "iverilog",
+    "text": "iverilog",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#script",
+    "href": "slides.html#script",
+    "title": "Test, Build, Deploy",
+    "section": "Script",
+    "text": "Script\n\nCite vcd2df?",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#daikon",
+    "href": "slides.html#daikon",
+    "title": "Test, Build, Deploy",
+    "section": "Daikon",
+    "text": "Daikon",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#picorv32",
+    "href": "slides.html#picorv32",
+    "title": "Test, Build, Deploy",
+    "section": "PicoRV32",
+    "text": "PicoRV32",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#holdouts",
+    "href": "slides.html#holdouts",
+    "title": "Test, Build, Deploy",
+    "section": "Holdouts",
+    "text": "Holdouts",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.html#performance",
+    "href": "slides.html#performance",
+    "title": "Test, Build, Deploy",
+    "section": "Performance",
+    "text": "Performance",
+    "crumbs": [
+      "Test, Build, Deploy"
+    ]
+  },
+  {
+    "objectID": "slides.rjs.html#hdls",
+    "href": "slides.rjs.html#hdls",
+    "title": "Test, Build, Deploy",
+    "section": "HDLs",
+    "text": "HDLs\n\nDennard Scaling"
+  },
+  {
+    "objectID": "slides.rjs.html#open-source",
+    "href": "slides.rjs.html#open-source",
+    "title": "Test, Build, Deploy",
+    "section": "Open Source",
+    "text": "Open Source\n\nRISC-V"
+  },
+  {
+    "objectID": "slides.rjs.html#github-actions",
+    "href": "slides.rjs.html#github-actions",
+    "title": "Test, Build, Deploy",
+    "section": "GitHub Actions",
+    "text": "GitHub Actions"
+  },
+  {
+    "objectID": "slides.rjs.html#graph",
+    "href": "slides.rjs.html#graph",
+    "title": "Test, Build, Deploy",
+    "section": "Graph",
+    "text": "Graph"
+  },
+  {
+    "objectID": "slides.rjs.html#inputs",
+    "href": "slides.rjs.html#inputs",
+    "title": "Test, Build, Deploy",
+    "section": "Inputs",
+    "text": "Inputs\n\nTestbench\nSimulator\nTrace\nTranslator\nMiner"
+  },
+  {
+    "objectID": "slides.rjs.html#outputs",
+    "href": "slides.rjs.html#outputs",
+    "title": "Test, Build, Deploy",
+    "section": "Outputs",
+    "text": "Outputs"
+  },
+  {
+    "objectID": "slides.rjs.html#myrtha",
+    "href": "slides.rjs.html#myrtha",
+    "title": "Test, Build, Deploy",
+    "section": "Myrtha",
+    "text": "Myrtha"
+  },
+  {
+    "objectID": "slides.rjs.html#iverilog",
+    "href": "slides.rjs.html#iverilog",
+    "title": "Test, Build, Deploy",
+    "section": "iverilog",
+    "text": "iverilog"
+  },
+  {
+    "objectID": "slides.rjs.html#script",
+    "href": "slides.rjs.html#script",
+    "title": "Test, Build, Deploy",
+    "section": "Script",
+    "text": "Script\n\nCite vcd2df?"
+  },
+  {
+    "objectID": "slides.rjs.html#daikon",
+    "href": "slides.rjs.html#daikon",
+    "title": "Test, Build, Deploy",
+    "section": "Daikon",
+    "text": "Daikon"
+  },
+  {
+    "objectID": "slides.rjs.html#picorv32",
+    "href": "slides.rjs.html#picorv32",
+    "title": "Test, Build, Deploy",
+    "section": "PicoRV32",
+    "text": "PicoRV32"
+  },
+  {
+    "objectID": "slides.rjs.html#holdouts",
+    "href": "slides.rjs.html#holdouts",
+    "title": "Test, Build, Deploy",
+    "section": "Holdouts",
+    "text": "Holdouts"
+  },
+  {
+    "objectID": "slides.rjs.html#performance",
+    "href": "slides.rjs.html#performance",
+    "title": "Test, Build, Deploy",
+    "section": "Performance",
+    "text": "Performance"
+  }
+]
