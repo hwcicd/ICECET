@@ -34,7 +34,7 @@
     "href": "slides.html#graph",
     "title": "Test, Build, Deploy",
     "section": "Graph",
-    "text": "Graph",
+    "text": "Graph\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLegend\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLegend…\n\n\n\n\n\n\n\nPicoRV32.v\n\n\n\nPicoRV32.v\n\n\n\n\n\n\n\niverilog\n\n\n\niverilog\n\n\n\n\n\n\n\npython3\n\n\n\npython3\n\n\n\n\n\n\n\ntestbench_ez.v\n\n\n\ntestbench_ez.v\n\n\n\n\n\n\n\ntestbench.vcd\n\n\n\ntestbench.vcd\n\n\n\n\n\n\n\njava\n\n\n\njava\n\n\n\n\n\n\n\ntrap == instr_beq\n\ntrap == instr_bge\n\n\n…\n\n\n\n\ntrap == instr_be…\n\n\n\n\n\n\n\nCode/Data File(s)\n\n\n\nCode/Data File(s)\n\n\n\n\n\n\n\nContainer\n\n\n\nContainer\n\n\n\n\n\n\n\nExecutable\n\n\n\nExecutable\n\n\n\n\n\n\n\nrtlkon.py\n\n\n\nrtlkon.py\n\n\n\n\n\n\n\ndaikon.jar\n\n\n\ndaikon.jar\n\n\n\n\n\n\n\nMakefile\n\n\n\nMakefile\n\n\n\n\n\n\n\nSpecification\n\n\n\nSpecification\n\n\n\nText is not SVG - cannot display",
     "crumbs": [
       "Test, Build, Deploy"
     ]
@@ -148,7 +148,7 @@
     "href": "slides.rjs.html#graph",
     "title": "Test, Build, Deploy",
     "section": "Graph",
-    "text": "Graph"
+    "text": "Graph\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLegend\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLegend…\n\n\n\n\n\n\n\nPicoRV32.v\n\n\n\nPicoRV32.v\n\n\n\n\n\n\n\niverilog\n\n\n\niverilog\n\n\n\n\n\n\n\npython3\n\n\n\npython3\n\n\n\n\n\n\n\ntestbench_ez.v\n\n\n\ntestbench_ez.v\n\n\n\n\n\n\n\ntestbench.vcd\n\n\n\ntestbench.vcd\n\n\n\n\n\n\n\njava\n\n\n\njava\n\n\n\n\n\n\n\ntrap == instr_beq\n\ntrap == instr_bge\n\n\n…\n\n\n\n\ntrap == instr_be…\n\n\n\n\n\n\n\nCode/Data File(s)\n\n\n\nCode/Data File(s)\n\n\n\n\n\n\n\nContainer\n\n\n\nContainer\n\n\n\n\n\n\n\nExecutable\n\n\n\nExecutable\n\n\n\n\n\n\n\nrtlkon.py\n\n\n\nrtlkon.py\n\n\n\n\n\n\n\ndaikon.jar\n\n\n\ndaikon.jar\n\n\n\n\n\n\n\nMakefile\n\n\n\nMakefile\n\n\n\n\n\n\n\nSpecification\n\n\n\nSpecification\n\n\n\nText is not SVG - cannot display"
   },
   {
     "objectID": "slides.rjs.html#inputs",
