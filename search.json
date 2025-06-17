@@ -4,130 +4,91 @@
     "href": "slides.html",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "None of us is as smart as all of us.\n\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n\n\n\n\n\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows.",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "None of us is as smart as all of us.\n\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n\n\n\n\n\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
     "objectID": "slides.html#problem-statement",
     "href": "slides.html#problem-statement",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs."
   },
   {
     "objectID": "slides.html#state-of-play",
     "href": "slides.html#state-of-play",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows.",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
     "objectID": "slides.html#graph-representation",
     "href": "slides.html#graph-representation",
     "title": "Test, Build, Deploy",
     "section": "Graph Representation",
-    "text": "Graph Representation",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Graph Representation"
   },
   {
     "objectID": "slides.html#inputs",
     "href": "slides.html#inputs",
     "title": "Test, Build, Deploy",
     "section": "Inputs",
-    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
   },
   {
     "objectID": "slides.html#specification",
     "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Specification"
   },
   {
     "objectID": "slides.html#myrtha",
     "href": "slides.html#myrtha",
     "title": "Test, Build, Deploy",
     "section": "Myrtha",
-    "text": "Myrtha",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Myrtha"
   },
   {
     "objectID": "slides.html#iverilog",
     "href": "slides.html#iverilog",
     "title": "Test, Build, Deploy",
     "section": "iverilog",
-    "text": "iverilog",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "iverilog"
   },
   {
     "objectID": "slides.html#script",
     "href": "slides.html#script",
     "title": "Test, Build, Deploy",
     "section": "Script",
-    "text": "Script\n\nCite vcd2df?",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Script\n\nCite vcd2df?"
   },
   {
     "objectID": "slides.html#daikon",
     "href": "slides.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Daikon"
   },
   {
     "objectID": "slides.html#picorv32",
     "href": "slides.html#picorv32",
     "title": "Test, Build, Deploy",
     "section": "PicoRV32",
-    "text": "PicoRV32",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "PicoRV32"
   },
   {
     "objectID": "slides.html#holdouts",
     "href": "slides.html#holdouts",
     "title": "Test, Build, Deploy",
     "section": "Holdouts",
-    "text": "Holdouts",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Holdouts"
   },
   {
     "objectID": "slides.html#performance",
     "href": "slides.html#performance",
     "title": "Test, Build, Deploy",
     "section": "Performance",
-    "text": "Performance",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
+    "text": "Performance"
   },
   {
     "objectID": "slides.rjs.html#problem-statement",
