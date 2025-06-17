@@ -403,22 +403,46 @@ Calvin Deutschbein, <strong>Aristotle Stassinopoulos</strong>
 <h1>Methodology</h1>
 
 </section>
-<section id="graph" class="slide level2">
-<h2>Graph</h2>
+<section id="graph-representation" class="slide level2">
+<h2>Graph Representation</h2>
 
 <img data-src="myrtha.svg" class="r-stretch"></section>
 <section id="inputs" class="slide level2">
 <h2>Inputs</h2>
-<ul>
-<li>Testbench</li>
-<li>Simulator</li>
-<li>Trace</li>
-<li>Translator</li>
-<li>Miner</li>
-</ul>
+<dl>
+<dt>Testbench</dt>
+<dd>
+An HDL “script” to be executed in simulation by a hardware design
+</dd>
+<dd>
+A way of testing hardware pre-silicon
+</dd>
+<dt>Simulator</dt>
+<dd>
+A piece of software that compiles HDL and testbench into a machine executable format
+</dd>
+<dt>Trace</dt>
+<dd>
+A transcription of the value of every hardware register at every timepoint while executing some instructions
+</dd>
+<dd>
+Often stored as a “value change dump” only recording <em>changes</em> for brevity
+</dd>
+<dt>Translator</dt>
+<dd>
+A custom script to convert a hardware trace into a simulated software trace, for software quality tools
+</dd>
+<dt>Miner</dt>
+<dd>
+A software quality tool that automatical generates specifications from traces
+</dd>
+</dl>
 </section>
-<section id="outputs" class="slide level2">
-<h2>Outputs</h2>
+<section id="specification" class="slide level2">
+<h2>Specification</h2>
+<ul>
+<li></li>
+</ul>
 </section></section>
 <section>
 <section id="implementation" class="title-slide slide level1 center">

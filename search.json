@@ -30,11 +30,11 @@
     ]
   },
   {
-    "objectID": "slides.html#graph",
-    "href": "slides.html#graph",
+    "objectID": "slides.html#graph-representation",
+    "href": "slides.html#graph-representation",
     "title": "Test, Build, Deploy",
-    "section": "Graph",
-    "text": "Graph",
+    "section": "Graph Representation",
+    "text": "Graph Representation",
     "crumbs": [
       "Test, Build, Deploy"
     ]
@@ -44,17 +44,17 @@
     "href": "slides.html#inputs",
     "title": "Test, Build, Deploy",
     "section": "Inputs",
-    "text": "Inputs\n\nTestbench\nSimulator\nTrace\nTranslator\nMiner",
+    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces",
     "crumbs": [
       "Test, Build, Deploy"
     ]
   },
   {
-    "objectID": "slides.html#outputs",
-    "href": "slides.html#outputs",
+    "objectID": "slides.html#specification",
+    "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
-    "section": "Outputs",
-    "text": "Outputs",
+    "section": "Specification",
+    "text": "Specification",
     "crumbs": [
       "Test, Build, Deploy"
     ]
@@ -144,25 +144,25 @@
     "text": "State of Play\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
-    "objectID": "slides.rjs.html#graph",
-    "href": "slides.rjs.html#graph",
+    "objectID": "slides.rjs.html#graph-representation",
+    "href": "slides.rjs.html#graph-representation",
     "title": "Test, Build, Deploy",
-    "section": "Graph",
-    "text": "Graph"
+    "section": "Graph Representation",
+    "text": "Graph Representation"
   },
   {
     "objectID": "slides.rjs.html#inputs",
     "href": "slides.rjs.html#inputs",
     "title": "Test, Build, Deploy",
     "section": "Inputs",
-    "text": "Inputs\n\nTestbench\nSimulator\nTrace\nTranslator\nMiner"
+    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
   },
   {
-    "objectID": "slides.rjs.html#outputs",
-    "href": "slides.rjs.html#outputs",
+    "objectID": "slides.rjs.html#specification",
+    "href": "slides.rjs.html#specification",
     "title": "Test, Build, Deploy",
-    "section": "Outputs",
-    "text": "Outputs"
+    "section": "Specification",
+    "text": "Specification"
   },
   {
     "objectID": "slides.rjs.html#myrtha",

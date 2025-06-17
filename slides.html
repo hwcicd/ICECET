@@ -129,9 +129,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline">Outline</a></li>
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
   <ul class="collapse">
-  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
+  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation">Graph Representation</a></li>
   <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
-  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  <li><a href="#specification" id="toc-specification" class="nav-link" data-scroll-target="#specification">Specification</a></li>
   </ul></li>
   <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a>
   <ul class="collapse">
@@ -242,22 +242,46 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<section id="graph" class="level2">
-<h2 class="anchored" data-anchor-id="graph">Graph</h2>
+<section id="graph-representation" class="level2">
+<h2 class="anchored" data-anchor-id="graph-representation">Graph Representation</h2>
 <p><img src="myrtha.svg" class="img-fluid"></p>
 </section>
 <section id="inputs" class="level2">
 <h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
-<ul>
-<li>Testbench</li>
-<li>Simulator</li>
-<li>Trace</li>
-<li>Translator</li>
-<li>Miner</li>
-</ul>
+<dl>
+<dt>Testbench</dt>
+<dd>
+An HDL “script” to be executed in simulation by a hardware design
+</dd>
+<dd>
+A way of testing hardware pre-silicon
+</dd>
+<dt>Simulator</dt>
+<dd>
+A piece of software that compiles HDL and testbench into a machine executable format
+</dd>
+<dt>Trace</dt>
+<dd>
+A transcription of the value of every hardware register at every timepoint while executing some instructions
+</dd>
+<dd>
+Often stored as a “value change dump” only recording <em>changes</em> for brevity
+</dd>
+<dt>Translator</dt>
+<dd>
+A custom script to convert a hardware trace into a simulated software trace, for software quality tools
+</dd>
+<dt>Miner</dt>
+<dd>
+A software quality tool that automatical generates specifications from traces
+</dd>
+</dl>
 </section>
-<section id="outputs" class="level2">
-<h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
+<section id="specification" class="level2">
+<h2 class="anchored" data-anchor-id="specification">Specification</h2>
+<ul>
+<li></li>
+</ul>
 </section>
 </section>
 <section id="implementation" class="level1">
