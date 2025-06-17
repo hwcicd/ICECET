@@ -53,14 +53,14 @@
     "href": "slides.html#script",
     "title": "Test, Build, Deploy",
     "section": "Script",
-    "text": "Script\n\n\n\nEarlier research tools have approached translating IEEE 1364 VCD files to other formats but there was no real standard packages.\n\nAs part of this research, we implemented a VCD reader in Python.\n\nThis quickly became a vector for future work and our group is new supporting development of a VCD-to-dataframe family of libraries in Python, R, and Spark.\nSeparately, using a Python script required a Python runtime in our containers.\n\n\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
+    "text": "Script\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
   },
   {
     "objectID": "slides.html#daikon",
     "href": "slides.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.\nDaikon infers invariants over functions, which apply to hardware clock cycles."
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire;\n  long w_base_addr_wire;\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.html#podman-and-github-actions",
@@ -137,14 +137,14 @@
     "href": "slides.rjs.html#script",
     "title": "Test, Build, Deploy",
     "section": "Script",
-    "text": "Script\n\n\n\nEarlier research tools have approached translating IEEE 1364 VCD files to other formats but there was no real standard packages.\n\nAs part of this research, we implemented a VCD reader in Python.\n\nThis quickly became a vector for future work and our group is new supporting development of a VCD-to-dataframe family of libraries in Python, R, and Spark.\nSeparately, using a Python script required a Python runtime in our containers.\n\n\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
+    "text": "Script\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
   },
   {
     "objectID": "slides.rjs.html#daikon",
     "href": "slides.rjs.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.\nDaikon infers invariants over functions, which apply to hardware clock cycles."
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire;\n  long w_base_addr_wire;\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.rjs.html#podman-and-github-actions",

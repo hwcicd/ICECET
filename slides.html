@@ -353,17 +353,6 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </section>
 <section id="script" class="level2">
 <h2 class="anchored" data-anchor-id="script">Script</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Earlier research tools have approached translating IEEE 1364 VCD files to other formats but there was no real standard packages.
-<ul>
-<li>As part of this research, we implemented a VCD reader in Python.</li>
-</ul></li>
-<li>This quickly became a vector for future work and our group is new supporting development of a VCD-to-dataframe family of libraries in Python, R, and Spark.</li>
-<li>Separately, using a Python script required a Python runtime in our containers.</li>
-</ul>
-</div><div class="column" style="width:50%;">
 <ol type="1">
 <li>Traverse to the enumeration of registers.</li>
 <li>Instantiate a data structure to store registers and values.</li>
@@ -375,17 +364,45 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <li>Append current values to a Daikon “trace” file.</li>
 </ol></li>
 </ol>
-</div>
-</div>
 </section>
 <section id="daikon" class="level2">
 <h2 class="anchored" data-anchor-id="daikon">Daikon</h2>
 <ul>
 <li>We regard Daikon as an example of a current or former state-of-the-art specification miner.</li>
 <li>As <a href="http://dx.doi.org/10.1016/j.scico.2007.01.015">doi:10.1016/j.scico.2007.01.015</a>, Daikon has ~1600 citations.</li>
-<li>Intended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.</li>
-<li>Daikon infers invariants over functions, which apply to hardware clock cycles.</li>
+<li>Intended for use in Java
+<ul>
+<li>Model registers as software level variables</li>
+<li>Model time slices (usually some number of nanoseconds) as functions.</li>
+</ul></li>
 </ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode v code-with-copy"><code class="sourceCode verilog"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ot">`timescale 1 ns / 1 ps</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> acw #</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">(</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">//-- base address</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">input</span> <span class="dt">wire</span><span class="op">[</span><span class="dv">31</span> <span class="op">:</span> <span class="dv">0</span><span class="op">]</span> r_base_addr_wire<span class="op">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">input</span> <span class="dt">wire</span><span class="op">[</span><span class="dv">31</span> <span class="op">:</span> <span class="dv">0</span><span class="op">]</span> w_base_addr_wire<span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">//-- num transaction</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">input</span> <span class="dt">wire</span><span class="op">[</span><span class="dv">15</span> <span class="op">:</span> <span class="dv">0</span><span class="op">]</span> r_num_trans_wire<span class="op">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">input</span> <span class="dt">wire</span><span class="op">[</span><span class="dv">15</span> <span class="op">:</span> <span class="dv">0</span><span class="op">]</span> w_num_trans_wire<span class="op">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Main <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">static</span> <span class="dt">void</span> acw <span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">//-- base address</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">long</span> r_base_addr_wire<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">long</span> w_base_addr_wire<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">//-- num transaction</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> r_num_trans_wire<span class="op">;</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> w_num_trans_wire<span class="op">;</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="podman-and-github-actions" class="level2">
 <h2 class="anchored" data-anchor-id="podman-and-github-actions">Podman and GitHub Actions</h2>
