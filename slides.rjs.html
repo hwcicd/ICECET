@@ -502,41 +502,39 @@ A software quality tool that automatical generates specifications from traces
 <section id="specification" class="slide level2">
 <h2>Specification</h2>
 <ul>
-<li>We specify the behavior of a hardware design as <em>rules</em> over <em>registers</em> and the <em>natural numbers</em> <span class="math inline">\(\mathbb{N}\)</span></li>
+<li>Specify hardware design as <em>rules</em> over <em>registers</em></li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<ul>
-<li>EBNF</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>rule = { test | isin | mult | line }</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>// EBNF</span>
 <span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>test = reg , eqs , reg</span>
-<span id="cb1-4"><a></a>     | reg , eqs , nat</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>isin = reg , "&amp;isin; {" , nat , "," , nat }</span>
-<span id="cb1-7"><a></a>     | reg , "&amp;isin; {" , nat , "," , nat , "," , nat }</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a>mult = reg , "&amp;equiv;" , reg , "(mod 0)"</span>
+<span id="cb1-3"><a></a>rule = { test | isin | mult | line }</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a>test = reg , eqs , reg</span>
+<span id="cb1-6"><a></a>     | reg , eqs , nat</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>isin = reg , "&amp;isin; {" , nat , "," , nat }</span>
+<span id="cb1-9"><a></a>     | reg , "&amp;isin; {" , nat , "," , nat , "," , nat }</span>
 <span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a>line = reg , "+" , reg , "&amp;times;" , "-" , reg , "== 0"</span>
+<span id="cb1-11"><a></a>mult = reg , "&amp;equiv;" , reg , "(mod 0)"</span>
 <span id="cb1-12"><a></a></span>
-<span id="cb1-13"><a></a>reg : string</span>
-<span id="cb1-14"><a></a>nat : natural</span>
-<span id="cb1-15"><a></a>eqs  = "==" | "!=" | "&lt;" | "&lt;=" | "&gt;" | "&gt;="</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a></a>line = reg , "+" , reg , "&amp;times;" , "-" , reg , "== 0"</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a>reg : string</span>
+<span id="cb1-16"><a></a>nat : natural</span>
+<span id="cb1-17"><a></a>eqs  = "==" | "!=" | "&lt;" | "&lt;=" | "&gt;" | "&gt;="</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<ul>
-<li>Examplehpm_counter_idx == hpm_idx</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a></a>wr_in_output == -1</span>
-<span id="cb2-2"><a></a>out one of { -1, 0 }</span>
-<span id="cb2-3"><a></a>csr_mstatus_value one of { -1, 0, 6144 }</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a></a>// Examples</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>wr_in_output == -1</span>
 <span id="cb2-4"><a></a>wr_in_output &lt; trap</span>
 <span id="cb2-5"><a></a>wr_in_output &lt;= imem_addr</span>
 <span id="cb2-6"><a></a>trap &gt;= imem_addr</span>
-<span id="cb2-7"><a></a>clock % imem_valid == 0</span>
-<span id="cb2-8"><a></a>trap != csr_mcycle_next</span>
-<span id="cb2-9"><a></a>clock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a></a>trap != csr_mcycle_next</span>
+<span id="cb2-8"><a></a>out one of { -1, 0 }</span>
+<span id="cb2-9"><a></a>csr_mstatus_value one of { -1, 0, 6144 }</span>
+<span id="cb2-10"><a></a>clock % imem_valid == 0</span>
+<span id="cb2-11"><a></a>clock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="graph-representation" class="slide level2">
