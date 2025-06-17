@@ -4,14 +4,14 @@
     "href": "slides.html",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "None of us is as smart as all of us.\n\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n\n\n\n\n\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
+    "text": "None of us is as smart as all of us.\n\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n\n\n\n\n\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
     "objectID": "slides.html#problem-statement",
     "href": "slides.html#problem-statement",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs."
+    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs."
   },
   {
     "objectID": "slides.html#state-of-play",
@@ -40,13 +40,6 @@
     "title": "Test, Build, Deploy",
     "section": "Graph Representation",
     "text": "Graph Representation"
-  },
-  {
-    "objectID": "slides.html#myrtha",
-    "href": "slides.html#myrtha",
-    "title": "Test, Build, Deploy",
-    "section": "Myrtha",
-    "text": "Myrtha"
   },
   {
     "objectID": "slides.html#iverilog",
@@ -91,11 +84,18 @@
     "text": "Performance"
   },
   {
+    "objectID": "slides.html#footnotes",
+    "href": "slides.html#footnotes",
+    "title": "Test, Build, Deploy",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThank you Andres Meza, UCSD.↩︎\ndoi:10.1145/3474376.3487286↩︎"
+  },
+  {
     "objectID": "slides.rjs.html#problem-statement",
     "href": "slides.rjs.html#problem-statement",
     "title": "Test, Build, Deploy",
     "section": "Problem Statement",
-    "text": "Problem Statement\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to specifications of hardware in HDLs."
+    "text": "Problem Statement\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs."
   },
   {
     "objectID": "slides.rjs.html#state-of-play",
@@ -124,13 +124,6 @@
     "title": "Test, Build, Deploy",
     "section": "Graph Representation",
     "text": "Graph Representation"
-  },
-  {
-    "objectID": "slides.rjs.html#myrtha",
-    "href": "slides.rjs.html#myrtha",
-    "title": "Test, Build, Deploy",
-    "section": "Myrtha",
-    "text": "Myrtha"
   },
   {
     "objectID": "slides.rjs.html#iverilog",

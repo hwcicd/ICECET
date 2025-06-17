@@ -130,7 +130,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a>
   <ul class="collapse">
-  <li><a href="#myrtha" id="toc-myrtha" class="nav-link" data-scroll-target="#myrtha">Myrtha</a></li>
   <li><a href="#iverilog" id="toc-iverilog" class="nav-link" data-scroll-target="#iverilog">iverilog</a></li>
   <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">Script</a></li>
   <li><a href="#daikon" id="toc-daikon" class="nav-link" data-scroll-target="#daikon">Daikon</a></li>
@@ -202,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>In 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.</li>
 </ul></li>
-<li>The 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to <strong>specifications</strong> of hardware in HDLs.</li>
+<li>The 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to <strong>specifications</strong> of hardware in HDLs.</li>
 </ul>
 </section>
 <section id="state-of-play" class="level2">
@@ -275,23 +274,23 @@ A software quality tool that automatical generates specifications from traces
 </ul>
 <div class="columns">
 <div class="column" style="width:55%;">
-<pre class="ebnf"><code>(* Extended Backus–Naur *)
-rule = test | isin | mult | line
-
-test = reg, eqs, reg
-     | reg, eqs, nat
-
-isin = reg, "∈ {", nat, ",", nat, "}"
-     | reg, "∈ {", nat, ",", nat, ",", nat "}"
-
-mult = reg, "≡ 0 (mod", reg, ")"
-
-line = reg, "+", reg, "×", reg, 
-            "-", reg, "+", nat, "= 0"
-
-reg : string
-nat : natural
-eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode email code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(* Extended Backus–Naur *)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rule = test | isin | mult | line</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>test = reg, eqs, reg</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     | reg, eqs, nat</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>isin = reg, "∈ {", nat, ",", nat, "}"</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     | reg, "∈ {", nat, ",", nat, ",", nat "}"</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mult = reg, "≡ 0 (mod", reg, ")"</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>line = reg, "+", reg, "×", reg, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            "-", reg, "+", nat, "= 0"</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>reg : string</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>nat : natural</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:45%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode email code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Examples</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wr = -1</span>
@@ -316,9 +315,24 @@ eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</code></pre>
 </section>
 <section id="implementation" class="level1">
 <h1>Implementation</h1>
-<section id="myrtha" class="level2">
-<h2 class="anchored" data-anchor-id="myrtha">Myrtha</h2>
-</section>
+<dl>
+<dt>Testbench</dt>
+<dd>
+We used designer-provided testbenches<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.
+</dd>
+<dt>Simulator</dt>
+<dd>
+We used Icarus Verilog (<code>iverilog</code>) which helpfully follows the IEEE standard.
+</dd>
+<dt>Translator</dt>
+<dd>
+We adapted a custom Python script from prior work<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.
+</dd>
+<dt>Miner</dt>
+<dd>
+We used the Daikon invariant detector.
+</dd>
+</dl>
 <section id="iverilog" class="level2">
 <h2 class="anchored" data-anchor-id="iverilog">iverilog</h2>
 </section>
@@ -353,7 +367,14 @@ eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</code></pre>
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Thank you Andres Meza, UCSD.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://dl.acm.org/doi/10.1145/3474376.3487286">doi:10.1145/3474376.3487286</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

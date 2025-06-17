@@ -430,7 +430,7 @@ Calvin Deutschbein, <strong>Aristotle Stassinopoulos</strong>
 <ul>
 <li>In 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.</li>
 </ul></li>
-<li>The 2009 “DevOps” formulation of Continious Integration/Continous Deployment can be applied to <strong>specifications</strong> of hardware in HDLs.</li>
+<li>The 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to <strong>specifications</strong> of hardware in HDLs.</li>
 </ul>
 </section>
 <section id="state-of-play" class="slide level2">
@@ -506,7 +506,7 @@ A software quality tool that automatical generates specifications from traces
 </ul>
 <div class="columns">
 <div class="column" style="width:55%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource ebnf number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>(* Extended Backus–Naur *)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>(* Extended Backus–Naur *)</span>
 <span id="cb1-2"><a></a>rule = test | isin | mult | line</span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a>test = reg, eqs, reg</span>
@@ -546,11 +546,25 @@ A software quality tool that automatical generates specifications from traces
 <section>
 <section id="implementation" class="title-slide slide level1 center">
 <h1>Implementation</h1>
-
-</section>
-<section id="myrtha" class="slide level2">
-<h2>Myrtha</h2>
-</section>
+<dl>
+<dt>Testbench</dt>
+<dd>
+We used designer-provided testbenches<sup>1</sup>.
+</dd>
+<dt>Simulator</dt>
+<dd>
+We used Icarus Verilog (<code>iverilog</code>) which helpfully follows the IEEE standard.
+</dd>
+<dt>Translator</dt>
+<dd>
+We adapted a custom Python script from prior work<sup>2</sup>.
+</dd>
+<dt>Miner</dt>
+<dd>
+We used the Daikon invariant detector.
+</dd>
+</dl>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Thank you Andres Meza, UCSD.</p></li><li id="fn2"><p><a href="https://dl.acm.org/doi/10.1145/3474376.3487286">doi:10.1145/3474376.3487286</a></p></li></ol></aside></section>
 <section id="iverilog" class="slide level2">
 <h2>iverilog</h2>
 </section>
@@ -587,6 +601,8 @@ A software quality tool that automatical generates specifications from traces
 
 
 </section>
+
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
