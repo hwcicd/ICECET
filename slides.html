@@ -101,35 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -392,21 +363,17 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <li>Separately, using a Python script required a Python runtime in our containers.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p>```{.python filename=“rtlkon.py” max-height: 20em} # RTL to Daikon # We do not claim to by Python programmers def rtlkon(filename): name = filename.split(“/”)[-1].split(“.”)[0] fptr = open(filename, “r”) line = “” nonce = 1 while “<span class="math inline">\(scope" not in line:
-        line = fptr.readline()
-    vars = get_vars(fptr)
-    vars_to_decls(vars, name)
-    vals = {var: -1 for var in vars}
-    while "\)</span>dumpvars” not in fptr.readline(): pass dptr = open(name + “.dtrace”, “w”) while line: line, vals = tick(fptr, vals) vals_to_dtrace(vars, vals, nonce, dptr) nonce += 1</p>
-<p>def get_vars(fptr): line = fptr.readline() vars = {} # just hope it stays ordered while “$enddefinitions” not in line: if “var” in line: parts = line.split() if parts[4] not in vars.values(): vars[parts[3]] = parts[4] line = fptr.readline() return vars</p>
-<p>def vars_to_decls(vars, name): f = open(name + “.decls”, “w”) def vars_to_tick(vars): for var in vars.values(): f.write(” variable ” + var + ““” var-kind variable rep-type int dec-type int comparability 1“““) f.write(”input-language C/C++-version 2.0” + “var-comparability implicit..tick():::ENTER” + ” ppt-type enter“) vars_to_tick(vars)<br>
-f.write(”..tick():::EXIT0” + ” ppt-type subexit“) vars_to_tick(vars)</p>
-<p>def tick(fptr, vals): line = fptr.readline() while line and “#” != line[0]: # Two cases, words and bits if ” ” in line: # word val, var = line[1:].strip().split() else: # bit val, var = line[0], line[1:].strip() if var in vals: vals[var] = int(val, 2) if val.isdigit() else -1 line = fptr.readline() return line, vals</p>
-<p>def vals_to_dtrace(vars, vals, nonce, dptr): dptr.write(“..tick():::ENTER_invocation_nonce” + str(nonce) + “”) [dptr.write(vars[var] + “” + str(vals[var]) + “”) for var in vars] dptr.write(“”) dptr.write(“..tick():::EXIT0_invocation_nonce” + str(nonce) + “”) [dptr.write(vars[var] + “” + str(vals[var]) + “”) for var in vars] dptr.write(“”)</p>
-<p>if <strong>name</strong> == “<strong>main</strong>”: import sys rtlkon(sys.argv[1]) ```</p>
-<ul>
-<li><code>-1</code> denotes a non-numeric hardware value (for uninitalized registers)</li>
-</ul>
+<ol type="1">
+<li>Traverse to the enumeration of registers.</li>
+<li>Instantiate a data structure to store registers and values.</li>
+<li>Write registers to a Daikon “declarations” file.</li>
+<li>Traverse to value changes.</li>
+<li>For each time point:
+<ol type="1">
+<li>Read each line, updating current register value.</li>
+<li>Append current values to a Daikon “trace” file.</li>
+</ol></li>
+</ol>
 </div>
 </div>
 </section>
