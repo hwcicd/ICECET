@@ -21,13 +21,6 @@
     "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
-    "objectID": "slides.html#graph-representation",
-    "href": "slides.html#graph-representation",
-    "title": "Test, Build, Deploy",
-    "section": "Graph Representation",
-    "text": "Graph Representation"
-  },
-  {
     "objectID": "slides.html#inputs",
     "href": "slides.html#inputs",
     "title": "Test, Build, Deploy",
@@ -39,7 +32,14 @@
     "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification"
+    "text": "Specification\n\nWe specify the behavior of a hardware design as rules over registers and the natural numbers \\(\\mathbb{N}\\)\n\n\n\n\nEBNF\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"&isin; {\" , nat , \",\" , nat }\n     | reg , \"&isin; {\" , nat , \",\" , nat , \",\" , nat }\n\nmult = reg , \"&equiv;\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"&times;\" , \"-\" , reg , \"== 0\"\n\nreg : string\nnat : natural\neqs  = \"==\" | \"!=\" | \"&lt;\" | \"&lt;=\" | \"&gt;\" | \"&gt;=\"\n\n\nExamplehpm_counter_idx == hpm_idx\n\nwr_in_output == -1\nout one of { -1, 0 }\ncsr_mstatus_value one of { -1, 0, 6144 }\nwr_in_output &lt; trap\nwr_in_output &lt;= imem_addr\ntrap &gt;= imem_addr\nclock % imem_valid == 0\ntrap != csr_mcycle_next\nclock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0"
+  },
+  {
+    "objectID": "slides.html#graph-representation",
+    "href": "slides.html#graph-representation",
+    "title": "Test, Build, Deploy",
+    "section": "Graph Representation",
+    "text": "Graph Representation"
   },
   {
     "objectID": "slides.html#myrtha",
@@ -105,13 +105,6 @@
     "text": "State of Play\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
-    "objectID": "slides.rjs.html#graph-representation",
-    "href": "slides.rjs.html#graph-representation",
-    "title": "Test, Build, Deploy",
-    "section": "Graph Representation",
-    "text": "Graph Representation"
-  },
-  {
     "objectID": "slides.rjs.html#inputs",
     "href": "slides.rjs.html#inputs",
     "title": "Test, Build, Deploy",
@@ -123,7 +116,14 @@
     "href": "slides.rjs.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification"
+    "text": "Specification\n\nWe specify the behavior of a hardware design as rules over registers and the natural numbers \\(\\mathbb{N}\\)\n\n\n\n\nEBNF\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"&isin; {\" , nat , \",\" , nat }\n     | reg , \"&isin; {\" , nat , \",\" , nat , \",\" , nat }\n\nmult = reg , \"&equiv;\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"&times;\" , \"-\" , reg , \"== 0\"\n\nreg : string\nnat : natural\neqs  = \"==\" | \"!=\" | \"&lt;\" | \"&lt;=\" | \"&gt;\" | \"&gt;=\"\n\n\nExamplehpm_counter_idx == hpm_idx\n\nwr_in_output == -1\nout one of { -1, 0 }\ncsr_mstatus_value one of { -1, 0, 6144 }\nwr_in_output &lt; trap\nwr_in_output &lt;= imem_addr\ntrap &gt;= imem_addr\nclock % imem_valid == 0\ntrap != csr_mcycle_next\nclock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0"
+  },
+  {
+    "objectID": "slides.rjs.html#graph-representation",
+    "href": "slides.rjs.html#graph-representation",
+    "title": "Test, Build, Deploy",
+    "section": "Graph Representation",
+    "text": "Graph Representation"
   },
   {
     "objectID": "slides.rjs.html#myrtha",
