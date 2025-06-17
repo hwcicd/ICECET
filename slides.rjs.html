@@ -549,7 +549,7 @@ A software quality tool that automatical generates specifications from traces
 <dl>
 <dt>Testbench</dt>
 <dd>
-We used designer-provided testbenches<sup>1</sup>.
+We used designer-provided testbenches.
 </dd>
 <dt>Simulator</dt>
 <dd>
@@ -557,21 +557,38 @@ We used Icarus Verilog (<code>iverilog</code>) which helpfully follows the IEEE 
 </dd>
 <dt>Translator</dt>
 <dd>
-We adapted a custom Python script from prior work<sup>2</sup>.
+We adapted a custom Python script from prior work.
 </dd>
 <dt>Miner</dt>
 <dd>
 We used the Daikon invariant detector.
 </dd>
 </dl>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Thank you Andres Meza, UCSD.</p></li><li id="fn2"><p><a href="https://dl.acm.org/doi/10.1145/3474376.3487286">doi:10.1145/3474376.3487286</a></p></li></ol></aside></section>
+</section>
 <section id="iverilog" class="slide level2">
-<h2>iverilog</h2>
+<h2><code>iverilog</code></h2>
+<ul>
+<li><code>iverilog</code> operates much like a compiler over hardware design languages <em>if additionally furnished with a satisfactory testbench</em>.
+<ul>
+<li>Similar to testing library code, basically.</li>
+<li>We found no hardware designs for which testbenches were not colocated with the designs under version control.</li>
+</ul></li>
+<li><code>iverilog</code> is often used for “small projects” with larger projects using Verilator, which parallelizes more aggressively, or commercial tools, but all tools output IEEE 1364 Value Change Dump (VCD) files.
+<ul>
+<li>Our toolchain requires VCD and has been validated over <code>iverilog</code></li>
+</ul></li>
+<li>This framework and these files are massive - they generated ASCII encoded description of binary numbers representing numerical values of registers.
+<ul>
+<li>Hundreds of registers in our minimal examples.</li>
+<li>We containerized, trimmed build tools but maintained dependencies, and didn’t cache trace data after making specifications.</li>
+</ul></li>
+</ul>
 </section>
 <section id="script" class="slide level2">
 <h2>Script</h2>
 <ul>
-<li>Cite vcd2df?</li>
+<li>Earlier research tools have approached translating IEEE 1364 VCD files to other formats.</li>
+<li></li>
 </ul>
 </section>
 <section id="daikon" class="slide level2">
@@ -601,8 +618,6 @@ We used the Daikon invariant detector.
 
 
 </section>
-
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

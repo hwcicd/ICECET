@@ -46,14 +46,14 @@
     "href": "slides.html#iverilog",
     "title": "Test, Build, Deploy",
     "section": "iverilog",
-    "text": "iverilog"
+    "text": "iverilog\n\niverilog operates much like a compiler over hardware design languages if additionally furnished with a satisfactory testbench.\n\nSimilar to testing library code, basically.\nWe found no hardware designs for which testbenches were not colocated with the designs under version control.\n\niverilog is often used for “small projects” with larger projects using Verilator, which parallelizes more aggressively, or commercial tools, but all tools output IEEE 1364 Value Change Dump (VCD) files.\n\nOur toolchain requires VCD and has been validated over iverilog\n\nThis framework and these files are massive - they generated ASCII encoded description of binary numbers representing numerical values of registers.\n\nHundreds of registers in our minimal examples.\nWe containerized, trimmed build tools but maintained dependencies, and didn’t cache trace data after making specifications."
   },
   {
     "objectID": "slides.html#script",
     "href": "slides.html#script",
     "title": "Test, Build, Deploy",
     "section": "Script",
-    "text": "Script\n\nCite vcd2df?"
+    "text": "Script\n\nEarlier research tools have approached translating IEEE 1364 VCD files to other formats."
   },
   {
     "objectID": "slides.html#daikon",
@@ -82,13 +82,6 @@
     "title": "Test, Build, Deploy",
     "section": "Performance",
     "text": "Performance"
-  },
-  {
-    "objectID": "slides.html#footnotes",
-    "href": "slides.html#footnotes",
-    "title": "Test, Build, Deploy",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThank you Andres Meza, UCSD.↩︎\ndoi:10.1145/3474376.3487286↩︎"
   },
   {
     "objectID": "slides.rjs.html#problem-statement",
@@ -130,14 +123,14 @@
     "href": "slides.rjs.html#iverilog",
     "title": "Test, Build, Deploy",
     "section": "iverilog",
-    "text": "iverilog"
+    "text": "iverilog\n\niverilog operates much like a compiler over hardware design languages if additionally furnished with a satisfactory testbench.\n\nSimilar to testing library code, basically.\nWe found no hardware designs for which testbenches were not colocated with the designs under version control.\n\niverilog is often used for “small projects” with larger projects using Verilator, which parallelizes more aggressively, or commercial tools, but all tools output IEEE 1364 Value Change Dump (VCD) files.\n\nOur toolchain requires VCD and has been validated over iverilog\n\nThis framework and these files are massive - they generated ASCII encoded description of binary numbers representing numerical values of registers.\n\nHundreds of registers in our minimal examples.\nWe containerized, trimmed build tools but maintained dependencies, and didn’t cache trace data after making specifications."
   },
   {
     "objectID": "slides.rjs.html#script",
     "href": "slides.rjs.html#script",
     "title": "Test, Build, Deploy",
     "section": "Script",
-    "text": "Script\n\nCite vcd2df?"
+    "text": "Script\n\nEarlier research tools have approached translating IEEE 1364 VCD files to other formats."
   },
   {
     "objectID": "slides.rjs.html#daikon",
