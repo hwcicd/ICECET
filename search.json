@@ -60,14 +60,14 @@
     "href": "slides.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire;\n  long w_base_addr_wire;\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.html#podman-and-github-actions",
     "href": "slides.html#podman-and-github-actions",
     "title": "Test, Build, Deploy",
     "section": "Podman and GitHub Actions",
-    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code, the container, Python script, and GitHub YAML are 10-100."
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100."
   },
   {
     "objectID": "slides.html#picorv32",
@@ -144,14 +144,14 @@
     "href": "slides.rjs.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire;\n  long w_base_addr_wire;\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.rjs.html#podman-and-github-actions",
     "href": "slides.rjs.html#podman-and-github-actions",
     "title": "Test, Build, Deploy",
     "section": "Podman and GitHub Actions",
-    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code, the container, Python script, and GitHub YAML are 10-100."
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100."
   },
   {
     "objectID": "slides.rjs.html#picorv32",
