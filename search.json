@@ -4,17 +4,7 @@
     "href": "slides.html",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "Dennard Scaling\n\n\n\n\n\nRISC-V",
-    "crumbs": [
-      "Test, Build, Deploy"
-    ]
-  },
-  {
-    "objectID": "slides.html#hdls",
-    "href": "slides.html#hdls",
-    "title": "Test, Build, Deploy",
-    "section": "",
-    "text": "Dennard Scaling",
+    "text": ":::{column width=“75%”}\nNone of us is as smart as all of us.\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n:::{column width=“75%”}\n\n\n\n\n\n\n\n\n\nRISC-V",
     "crumbs": [
       "Test, Build, Deploy"
     ]
@@ -134,7 +124,7 @@
     "href": "slides.rjs.html#hdls",
     "title": "Test, Build, Deploy",
     "section": "HDLs",
-    "text": "HDLs\n\nDennard Scaling"
+    "text": "HDLs"
   },
   {
     "objectID": "slides.rjs.html#open-source",
