@@ -60,7 +60,14 @@
     "href": "slides.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon"
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.\nDaikon infers invariants over functions, which apply to hardware clock cycles."
+  },
+  {
+    "objectID": "slides.html#podman-and-github-actions",
+    "href": "slides.html#podman-and-github-actions",
+    "title": "Test, Build, Deploy",
+    "section": "Podman and GitHub Actions",
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code, the container, Python script, and GitHub YAML are 10-100."
   },
   {
     "objectID": "slides.html#picorv32",
@@ -137,7 +144,14 @@
     "href": "slides.rjs.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon"
+    "text": "Daikon\n\nWe regard Daikon as an example of a current or former state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.\nDaikon infers invariants over functions, which apply to hardware clock cycles."
+  },
+  {
+    "objectID": "slides.rjs.html#podman-and-github-actions",
+    "href": "slides.rjs.html#podman-and-github-actions",
+    "title": "Test, Build, Deploy",
+    "section": "Podman and GitHub Actions",
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\nMakefiles tend to be 1-10 lines of code, the container, Python script, and GitHub YAML are 10-100."
   },
   {
     "objectID": "slides.rjs.html#picorv32",

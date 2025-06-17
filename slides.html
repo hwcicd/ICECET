@@ -133,6 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#icarus-verilog-or-iverilog" id="toc-icarus-verilog-or-iverilog" class="nav-link" data-scroll-target="#icarus-verilog-or-iverilog">Icarus Verilog or <code>iverilog</code></a></li>
   <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">Script</a></li>
   <li><a href="#daikon" id="toc-daikon" class="nav-link" data-scroll-target="#daikon">Daikon</a></li>
+  <li><a href="#podman-and-github-actions" id="toc-podman-and-github-actions" class="nav-link" data-scroll-target="#podman-and-github-actions">Podman and GitHub Actions</a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
@@ -379,6 +380,20 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </section>
 <section id="daikon" class="level2">
 <h2 class="anchored" data-anchor-id="daikon">Daikon</h2>
+<ul>
+<li>We regard Daikon as an example of a current or former state-of-the-art specification miner.</li>
+<li>As <a href="http://dx.doi.org/10.1016/j.scico.2007.01.015">doi:10.1016/j.scico.2007.01.015</a>, Daikon has ~1600 citations.</li>
+<li>Intended for use in Java, we treat registers as software level variables and time slices (usually some number of nanoseconds) as functions.</li>
+<li>Daikon infers invariants over functions, which apply to hardware clock cycles.</li>
+</ul>
+</section>
+<section id="podman-and-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="podman-and-github-actions">Podman and GitHub Actions</h2>
+<ul>
+<li>We fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.</li>
+<li>Specifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.</li>
+<li>Makefiles tend to be 1-10 lines of code, the container, Python script, and GitHub YAML are 10-100.</li>
+</ul>
 </section>
 </section>
 <section id="results" class="level1">
