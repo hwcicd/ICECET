@@ -32,7 +32,7 @@
     "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// Extended Backus–Naur\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡\", reg, \"(mod 0)\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n// Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.html#graph-representation",
@@ -116,7 +116,7 @@
     "href": "slides.rjs.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// Extended Backus–Naur\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡\", reg, \"(mod 0)\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n// Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.rjs.html#graph-representation",

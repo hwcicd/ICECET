@@ -506,7 +506,7 @@ A software quality tool that automatical generates specifications from traces
 </ul>
 <div class="columns">
 <div class="column" style="width:55%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>// Extended Backus–Naur</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource ebnf number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>(* Extended Backus–Naur *)</span>
 <span id="cb1-2"><a></a>rule = test | isin | mult | line</span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a>test = reg, eqs, reg</span>
@@ -515,7 +515,7 @@ A software quality tool that automatical generates specifications from traces
 <span id="cb1-7"><a></a>isin = reg, "∈ {", nat, ",", nat, "}"</span>
 <span id="cb1-8"><a></a>     | reg, "∈ {", nat, ",", nat, ",", nat "}"</span>
 <span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a>mult = reg, "≡", reg, "(mod 0)"</span>
+<span id="cb1-10"><a></a>mult = reg, "≡ 0 (mod", reg, ")"</span>
 <span id="cb1-11"><a></a></span>
 <span id="cb1-12"><a></a>line = reg, "+", reg, "×", reg, </span>
 <span id="cb1-13"><a></a>            "-", reg, "+", nat, "= 0"</span>
@@ -524,7 +524,7 @@ A software quality tool that automatical generates specifications from traces
 <span id="cb1-16"><a></a>nat : natural</span>
 <span id="cb1-17"><a></a>eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:45%;">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a></a>// Examples</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a></a># Examples</span>
 <span id="cb2-2"><a></a>wr = -1</span>
 <span id="cb2-3"><a></a>wr &lt; trap</span>
 <span id="cb2-4"><a></a>wr ⋜ imem</span>
