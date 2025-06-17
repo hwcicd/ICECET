@@ -21,18 +21,18 @@
     "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
-    "objectID": "slides.html#inputs",
-    "href": "slides.html#inputs",
+    "objectID": "slides.html#requirements",
+    "href": "slides.html#requirements",
     "title": "Test, Build, Deploy",
-    "section": "Inputs",
-    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
+    "section": "Requirements",
+    "text": "Requirements\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
   },
   {
     "objectID": "slides.html#specification",
     "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// EBNF\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"&isin; {\" , nat , \",\" , nat }\n     | reg , \"&isin; {\" , nat , \",\" , nat , \",\" , nat }\n\nmult = reg , \"&equiv;\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"&times;\" , \"-\" , reg , \"== 0\"\n\nreg : string\nnat : natural\neqs  = \"==\" | \"!=\" | \"&lt;\" | \"&lt;=\" | \"&gt;\" | \"&gt;=\"\n\n// Examples\n\nwr_in_output == -1\nwr_in_output &lt; trap\nwr_in_output &lt;= imem_addr\ntrap &gt;= imem_addr\ntrap != csr_mcycle_next\nout one of { -1, 0 }\ncsr_mstatus_value one of { -1, 0, 6144 }\nclock % imem_valid == 0\nclock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// Extended Backus–Naur\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"∈ {\" , nat , \",\" , nat, \"}\"\n     | reg , \"∈ {\" , nat , \",\" , nat , \",\" , nat \"}\"\n\nmult = reg , \"≡\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"×\" , reg, \"-\" , reg , \"= 0\"\n\nreg : string\nnat : natural\neqs  = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n// Examples\n\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.html#graph-representation",
@@ -105,18 +105,18 @@
     "text": "State of Play\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
-    "objectID": "slides.rjs.html#inputs",
-    "href": "slides.rjs.html#inputs",
+    "objectID": "slides.rjs.html#requirements",
+    "href": "slides.rjs.html#requirements",
     "title": "Test, Build, Deploy",
-    "section": "Inputs",
-    "text": "Inputs\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
+    "section": "Requirements",
+    "text": "Requirements\n\nTestbench\n\nAn HDL “script” to be executed in simulation by a hardware design\n\n\nA way of testing hardware pre-silicon\n\nSimulator\n\nA piece of software that compiles HDL and testbench into a machine executable format\n\nTrace\n\nA transcription of the value of every hardware register at every timepoint while executing some instructions\n\n\nOften stored as a “value change dump” only recording changes for brevity\n\nTranslator\n\nA custom script to convert a hardware trace into a simulated software trace, for software quality tools\n\nMiner\n\nA software quality tool that automatical generates specifications from traces"
   },
   {
     "objectID": "slides.rjs.html#specification",
     "href": "slides.rjs.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// EBNF\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"&isin; {\" , nat , \",\" , nat }\n     | reg , \"&isin; {\" , nat , \",\" , nat , \",\" , nat }\n\nmult = reg , \"&equiv;\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"&times;\" , \"-\" , reg , \"== 0\"\n\nreg : string\nnat : natural\neqs  = \"==\" | \"!=\" | \"&lt;\" | \"&lt;=\" | \"&gt;\" | \"&gt;=\"\n\n// Examples\n\nwr_in_output == -1\nwr_in_output &lt; trap\nwr_in_output &lt;= imem_addr\ntrap &gt;= imem_addr\ntrap != csr_mcycle_next\nout one of { -1, 0 }\ncsr_mstatus_value one of { -1, 0, 6144 }\nclock % imem_valid == 0\nclock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n// Extended Backus–Naur\n\nrule = { test | isin | mult | line }\n\ntest = reg , eqs , reg\n     | reg , eqs , nat\n\nisin = reg , \"∈ {\" , nat , \",\" , nat, \"}\"\n     | reg , \"∈ {\" , nat , \",\" , nat , \",\" , nat \"}\"\n\nmult = reg , \"≡\" , reg , \"(mod 0)\"\n\nline = reg , \"+\" , reg , \"×\" , reg, \"-\" , reg , \"= 0\"\n\nreg : string\nnat : natural\neqs  = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n// Examples\n\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.rjs.html#graph-representation",

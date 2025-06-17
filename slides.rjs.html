@@ -468,8 +468,8 @@ Calvin Deutschbein, <strong>Aristotle Stassinopoulos</strong>
 <h1>Methodology</h1>
 
 </section>
-<section id="inputs" class="slide level2">
-<h2>Inputs</h2>
+<section id="requirements" class="slide level2">
+<h2>Requirements</h2>
 <dl>
 <dt>Testbench</dt>
 <dd>
@@ -506,35 +506,38 @@ A software quality tool that automatical generates specifications from traces
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>// EBNF</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a></a>// Extended Backus–Naur</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>rule = { test | isin | mult | line }</span>
 <span id="cb1-4"><a></a></span>
 <span id="cb1-5"><a></a>test = reg , eqs , reg</span>
 <span id="cb1-6"><a></a>     | reg , eqs , nat</span>
 <span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a>isin = reg , "&amp;isin; {" , nat , "," , nat }</span>
-<span id="cb1-9"><a></a>     | reg , "&amp;isin; {" , nat , "," , nat , "," , nat }</span>
+<span id="cb1-8"><a></a>isin = reg , "∈ {" , nat , "," , nat, "}"</span>
+<span id="cb1-9"><a></a>     | reg , "∈ {" , nat , "," , nat , "," , nat "}"</span>
 <span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a>mult = reg , "&amp;equiv;" , reg , "(mod 0)"</span>
+<span id="cb1-11"><a></a>mult = reg , "≡" , reg , "(mod 0)"</span>
 <span id="cb1-12"><a></a></span>
-<span id="cb1-13"><a></a>line = reg , "+" , reg , "&amp;times;" , "-" , reg , "== 0"</span>
+<span id="cb1-13"><a></a>line = reg , "+" , reg , "×" , reg, "-" , reg , "= 0"</span>
 <span id="cb1-14"><a></a></span>
 <span id="cb1-15"><a></a>reg : string</span>
 <span id="cb1-16"><a></a>nat : natural</span>
-<span id="cb1-17"><a></a>eqs  = "==" | "!=" | "&lt;" | "&lt;=" | "&gt;" | "&gt;="</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-17"><a></a>eqs  = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource email number-lines code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a></a>// Examples</span>
 <span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>wr_in_output == -1</span>
-<span id="cb2-4"><a></a>wr_in_output &lt; trap</span>
-<span id="cb2-5"><a></a>wr_in_output &lt;= imem_addr</span>
-<span id="cb2-6"><a></a>trap &gt;= imem_addr</span>
-<span id="cb2-7"><a></a>trap != csr_mcycle_next</span>
-<span id="cb2-8"><a></a>out one of { -1, 0 }</span>
-<span id="cb2-9"><a></a>csr_mstatus_value one of { -1, 0, 6144 }</span>
-<span id="cb2-10"><a></a>clock % imem_valid == 0</span>
-<span id="cb2-11"><a></a>clock + 8589934584 * csr_minstreth_wdata - 2 * pc + 8589934583 == 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a></a>wr = -1</span>
+<span id="cb2-4"><a></a>wr &lt; trap</span>
+<span id="cb2-5"><a></a>wr ⋜ imem</span>
+<span id="cb2-6"><a></a>trap ⋝ imem</span>
+<span id="cb2-7"><a></a>trap ≠ csr</span>
+<span id="cb2-8"><a></a>out ∈ { -1, 0 }</span>
+<span id="cb2-9"><a></a>status ∈ { -1, 0, 6144 }</span>
+<span id="cb2-10"><a></a>clk % imem = 0</span>
+<span id="cb2-11"><a></a>clk + 4 * csr - 2 * pc + 3 = 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>-1</code> denotes a non-numeric hardware value (for uninitalized registers)</li>
+</ul>
 </div></div>
 </section>
 <section id="graph-representation" class="slide level2">
