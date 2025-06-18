@@ -1,1 +1,4 @@
-https://www.unomaha.edu/college-of-information-science-and-technology/_files/docs/round-tables/tips-for-academic-presentations-mdavidson.pdf
+- [Paper](https://arxiv.org/abs/2503.19180)
+- [Slides](https://hwcicd.github.io/ICECET/slides.rjs.html#/title-slide)
+- [Outline](https://hwcicd.github.io/ICECET/slides.html)
+- [Reproducability](https://github.com/hwcicd/ICECET)
