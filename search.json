@@ -4,21 +4,28 @@
     "href": "slides.html",
     "title": "Test, Build, Deploy",
     "section": "",
-    "text": "None of us is as smart as all of us.\n\n\nAmber Huffman, Principal Engineer, Google Cloud\n\n\n\n\n\n\n\n\n\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs.\n\n\n\n\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
+    "text": "github.com/hwcicd/ICECET"
+  },
+  {
+    "objectID": "slides.html#follow-along",
+    "href": "slides.html#follow-along",
+    "title": "Test, Build, Deploy",
+    "section": "",
+    "text": "github.com/hwcicd/ICECET"
   },
   {
     "objectID": "slides.html#problem-statement",
     "href": "slides.html#problem-statement",
     "title": "Test, Build, Deploy",
-    "section": "",
-    "text": "With the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs."
+    "section": "Problem Statement",
+    "text": "Problem Statement\n\nWith the collapse of MOSFET scaling circa 2006, higher hardware performance became tightly coupled with higher hardware complexity due to due heat and power constraints.\n\nAlso called “The Heat Wall”\n\nAn explosion of hardware complexity drove major advances in Hardware Design Languages (HDLs).\n\nIn 2009 when IEEE 1364 Verilog standard expanded to inlcude SystemVerilog for software-driven simulation and testing.\n\nThe 2009 “DevOps” formulation of Continuous Integration/Continuous Deployment can be applied to specifications of hardware in HDLs."
   },
   {
     "objectID": "slides.html#state-of-play",
     "href": "slides.html#state-of-play",
     "title": "Test, Build, Deploy",
-    "section": "",
-    "text": "Major advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
+    "section": "State of Play",
+    "text": "State of Play\n\nMajor advances in open source hardware.\n\nRISC-V open source CPUs\nOpenTitan/Caliptra open source root of trust (RoT)\n\nMajor advances in CI/CD formulations for open source hardware\n\nGitHub Actions for CI/CD\nHardware Specification mining for HDLs\n\nWe provide:\n\nA framework to build specifications from HDLs\nA container package to automate the process within workflows."
   },
   {
     "objectID": "slides.html#requirements",
@@ -39,7 +46,7 @@
     "href": "slides.html#graph-representation",
     "title": "Test, Build, Deploy",
     "section": "Graph Representation",
-    "text": "Graph Representation"
+    "text": "Graph Representation\n\nWe term this the “Myrtha” package."
   },
   {
     "objectID": "slides.html#icarus-verilog-or-iverilog",
@@ -91,6 +98,34 @@
     "text": "Performance\n\n\n\nNERV size\n\n549 registers\n1267 lines of Verilog\n\nTestbench size\n\n19 cycles\n155 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nAKER size\n\n432 registers\n2002 lines of Verilog\n\nTestbench size\n\n1055 cycles\n527 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n6290\n10990\n53007\n\n\n.decls\n3519\n7034\n62829\n\n\n.dtrace\n2230270\n2228160\n13840288\n\n\nspec\n5594\n17986\n181149"
   },
   {
+    "objectID": "slides.html#contributions",
+    "href": "slides.html#contributions",
+    "title": "Test, Build, Deploy",
+    "section": "Contributions",
+    "text": "Contributions\n\nGeneralizable and autonomous verilog-to-specification pipeline for hardware designs.\nManagable container size for options for trimming.\nLinear time and log space complexity with product design size and test duration.\nGPLv3 tested-and-documented code."
+  },
+  {
+    "objectID": "slides.html#future-work",
+    "href": "slides.html#future-work",
+    "title": "Test, Build, Deploy",
+    "section": "Future Work",
+    "text": "Future Work\n\nWe have upgraded the custom Python script to a Python/Spark/R package which reads VCDs to various binary formats.\n\nUp to 100x space savings versus .decls + .dtrace\nAccepted at ACDSA’25\nAvailable as vcd2df on arXiv, CRAN, PyPI\n\nUsing Spark, we have parallelized the process to hundreds of traces.\n\nWe used this to study information flow paths that may reveal transient execution CPU vulnerabilities (Spectre/Meltdown/etc)\n\nWe are exploring specification mining in Rust or Python to remove the JVM/ASCII bottleneck and scale to larger designs.\n\nNamely BOOM core, an open source RISC-V design with a Spectre vulnerability."
+  },
+  {
+    "objectID": "slides.html#questions",
+    "href": "slides.html#questions",
+    "title": "Test, Build, Deploy",
+    "section": "Questions",
+    "text": "Questions\n\nAsk me about:\n\nGitHub Actions/Workflows\nUsing the tool on NERV\n\nEmail cdeutschbein@willamette.edu about:\n\nSpecification mining\nArchitecture\nComplexity"
+  },
+  {
+    "objectID": "slides.rjs.html#follow-along",
+    "href": "slides.rjs.html#follow-along",
+    "title": "Test, Build, Deploy",
+    "section": "Follow Along",
+    "text": "Follow Along\ngithub.com/hwcicd/ICECET"
+  },
+  {
     "objectID": "slides.rjs.html#problem-statement",
     "href": "slides.rjs.html#problem-statement",
     "title": "Test, Build, Deploy",
@@ -123,7 +158,7 @@
     "href": "slides.rjs.html#graph-representation",
     "title": "Test, Build, Deploy",
     "section": "Graph Representation",
-    "text": "Graph Representation"
+    "text": "Graph Representation\n\nWe term this the “Myrtha” package."
   },
   {
     "objectID": "slides.rjs.html#icarus-verilog-or-iverilog",
@@ -173,5 +208,26 @@
     "title": "Test, Build, Deploy",
     "section": "Performance",
     "text": "Performance\n\n\n\nNERV size\n\n549 registers\n1267 lines of Verilog\n\nTestbench size\n\n19 cycles\n155 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nAKER size\n\n432 registers\n2002 lines of Verilog\n\nTestbench size\n\n1055 cycles\n527 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n6290\n10990\n53007\n\n\n.decls\n3519\n7034\n62829\n\n\n.dtrace\n2230270\n2228160\n13840288\n\n\nspec\n5594\n17986\n181149"
+  },
+  {
+    "objectID": "slides.rjs.html#contributions",
+    "href": "slides.rjs.html#contributions",
+    "title": "Test, Build, Deploy",
+    "section": "Contributions",
+    "text": "Contributions\n\nGeneralizable and autonomous verilog-to-specification pipeline for hardware designs.\nManagable container size for options for trimming.\nLinear time and log space complexity with product design size and test duration.\nGPLv3 tested-and-documented code."
+  },
+  {
+    "objectID": "slides.rjs.html#future-work",
+    "href": "slides.rjs.html#future-work",
+    "title": "Test, Build, Deploy",
+    "section": "Future Work",
+    "text": "Future Work\n\nWe have upgraded the custom Python script to a Python/Spark/R package which reads VCDs to various binary formats.\n\nUp to 100x space savings versus .decls + .dtrace\nAccepted at ACDSA’25\nAvailable as vcd2df on arXiv, CRAN, PyPI\n\nUsing Spark, we have parallelized the process to hundreds of traces.\n\nWe used this to study information flow paths that may reveal transient execution CPU vulnerabilities (Spectre/Meltdown/etc)\n\nWe are exploring specification mining in Rust or Python to remove the JVM/ASCII bottleneck and scale to larger designs.\n\nNamely BOOM core, an open source RISC-V design with a Spectre vulnerability."
+  },
+  {
+    "objectID": "slides.rjs.html#questions",
+    "href": "slides.rjs.html#questions",
+    "title": "Test, Build, Deploy",
+    "section": "Questions",
+    "text": "Questions\n\nAsk me about:\n\nGitHub Actions/Workflows\nUsing the tool on NERV\n\nEmail cdeutschbein@willamette.edu about:\n\nSpecification mining\nArchitecture\nComplexity"
   }
 ]

@@ -402,11 +402,17 @@ Calvin Deutschbein, <strong>Aristotle Stassinopoulos</strong>
 </div>
 
 </section>
+<section id="follow-along" class="slide level2">
+<h2>Follow Along</h2>
+<p><a href="https://github.com/hwcicd/ICECET">github.com/hwcicd/ICECET</a></p>
+
+<img data-src="qrcode.svg" class="r-stretch"></section>
 <section>
 <section id="motivation" class="title-slide slide level1 center">
 <h1>Motivation</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>Open source hardware is the future, because:</p>
 <blockquote>
 <p>None of us is as smart as all of us.</p>
 </blockquote>
@@ -543,6 +549,9 @@ A software quality tool that automatical generates specifications from traces
 </section>
 <section id="graph-representation" class="slide level2">
 <h2>Graph Representation</h2>
+<ul>
+<li>We term this the “Myrtha” package.</li>
+</ul>
 
 <img data-src="myrtha.svg" class="r-stretch"></section></section>
 <section>
@@ -852,16 +861,57 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </table>
 </div></div>
 </section></section>
+<section>
 <section id="summary" class="title-slide slide level1 center">
 <h1>Summary</h1>
 
 </section>
-
-<section id="future-work" class="title-slide slide level1 center">
-<h1>Future Work</h1>
-
-
+<section id="contributions" class="slide level2">
+<h2>Contributions</h2>
+<ul>
+<li>Generalizable and autonomous verilog-to-specification pipeline for hardware designs.</li>
+<li>Managable container size for options for trimming.</li>
+<li>Linear time and log space complexity with product design size and test duration.</li>
+<li>GPLv3 tested-and-documented code.</li>
+</ul>
 </section>
+<section id="future-work" class="slide level2">
+<h2>Future Work</h2>
+<ul>
+<li>We have upgraded the custom Python script to a Python/Spark/R package which reads VCDs to various binary formats.
+<ul>
+<li>Up to 100x space savings versus <code>.decls</code> + <code>.dtrace</code></li>
+<li>Accepted at ACDSA’25</li>
+<li>Available as <code>vcd2df</code> on arXiv, CRAN, PyPI</li>
+</ul></li>
+<li>Using Spark, we have parallelized the process to hundreds of traces.
+<ul>
+<li>We used this to study information flow paths that may reveal transient execution CPU vulnerabilities (Spectre/Meltdown/etc)</li>
+</ul></li>
+<li>We are exploring specification mining in Rust or Python to remove the JVM/ASCII bottleneck and scale to larger designs.
+<ul>
+<li>Namely BOOM core, an open source RISC-V design with a Spectre vulnerability.</li>
+</ul></li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li>Ask me about:
+<ul>
+<li>GitHub Actions/Workflows</li>
+<li>Using the tool on NERV</li>
+</ul></li>
+<li>Email <a href="cdeutschbein@willamette.edu"><code>cdeutschbein@willamette.edu</code></a> about:
+<ul>
+<li>Specification mining</li>
+<li>Architecture</li>
+<li>Complexity</li>
+</ul></li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

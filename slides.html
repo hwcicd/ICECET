@@ -116,7 +116,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a>
+  <li><a href="#follow-along" id="toc-follow-along" class="nav-link active" data-scroll-target="#follow-along">Follow Along</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a>
   <ul class="collapse">
   <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
   <li><a href="#state-of-play" id="toc-state-of-play" class="nav-link" data-scroll-target="#state-of-play">State of Play</a></li>
@@ -141,8 +142,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#holdouts" id="toc-holdouts" class="nav-link" data-scroll-target="#holdouts">Holdouts</a></li>
   <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#contributions" id="toc-contributions" class="nav-link" data-scroll-target="#contributions">Contributions</a></li>
   <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.rjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -175,10 +180,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="follow-along" class="level2">
+<h2 class="anchored" data-anchor-id="follow-along">Follow Along</h2>
+<p><a href="https://github.com/hwcicd/ICECET">github.com/hwcicd/ICECET</a></p>
+<p><img src="qrcode.svg" class="img-fluid"></p>
+</section>
 <section id="motivation" class="level1">
 <h1>Motivation</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>Open source hardware is the future, because:</p>
 <blockquote class="blockquote">
 <p>None of us is as smart as all of us.</p>
 </blockquote>
@@ -313,6 +324,9 @@ A software quality tool that automatical generates specifications from traces
 </section>
 <section id="graph-representation" class="level2">
 <h2 class="anchored" data-anchor-id="graph-representation">Graph Representation</h2>
+<ul>
+<li>We term this the “Myrtha” package.</li>
+</ul>
 <p><img src="myrtha.svg" class="img-fluid"></p>
 </section>
 </section>
@@ -626,11 +640,52 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<section id="contributions" class="level2">
+<h2 class="anchored" data-anchor-id="contributions">Contributions</h2>
+<ul>
+<li>Generalizable and autonomous verilog-to-specification pipeline for hardware designs.</li>
+<li>Managable container size for options for trimming.</li>
+<li>Linear time and log space complexity with product design size and test duration.</li>
+<li>GPLv3 tested-and-documented code.</li>
+</ul>
 </section>
-<section id="future-work" class="level1">
-<h1>Future Work</h1>
+<section id="future-work" class="level2">
+<h2 class="anchored" data-anchor-id="future-work">Future Work</h2>
+<ul>
+<li>We have upgraded the custom Python script to a Python/Spark/R package which reads VCDs to various binary formats.
+<ul>
+<li>Up to 100x space savings versus <code>.decls</code> + <code>.dtrace</code></li>
+<li>Accepted at ACDSA’25</li>
+<li>Available as <code>vcd2df</code> on arXiv, CRAN, PyPI</li>
+</ul></li>
+<li>Using Spark, we have parallelized the process to hundreds of traces.
+<ul>
+<li>We used this to study information flow paths that may reveal transient execution CPU vulnerabilities (Spectre/Meltdown/etc)</li>
+</ul></li>
+<li>We are exploring specification mining in Rust or Python to remove the JVM/ASCII bottleneck and scale to larger designs.
+<ul>
+<li>Namely BOOM core, an open source RISC-V design with a Spectre vulnerability.</li>
+</ul></li>
+</ul>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li>Ask me about:
+<ul>
+<li>GitHub Actions/Workflows</li>
+<li>Using the tool on NERV</li>
+</ul></li>
+<li>Email <a href="cdeutschbein@willamette.edu"><code>cdeutschbein@willamette.edu</code></a> about:
+<ul>
+<li>Specification mining</li>
+<li>Architecture</li>
+<li>Complexity</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
