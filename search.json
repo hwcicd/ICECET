@@ -53,14 +53,14 @@
     "href": "slides.html#translation-algorithm",
     "title": "Test, Build, Deploy",
     "section": "Translation Algorithm",
-    "text": "Translation Algorithm\nHow do we go from value changes to traces?\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
+    "text": "Translation Algorithm\nHow do we go from value changes to traces?\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file. (.decls)\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file. (.dtrace)"
   },
   {
     "objectID": "slides.html#daikon",
     "href": "slides.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
+    "text": "Daikon\n\nWe regard Daikon as an example of a state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as methods.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw() {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.html#podman-and-github-actions",
@@ -74,7 +74,7 @@
     "href": "slides.html#picorv32",
     "title": "Test, Build, Deploy",
     "section": "PicoRV32",
-    "text": "PicoRV32"
+    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\n\nWe needed ~5 minutes to build the test container.\nSpecification generation took ~4 seconds locally and ~40 seconds remotely."
   },
   {
     "objectID": "slides.html#holdouts",
@@ -137,14 +137,14 @@
     "href": "slides.rjs.html#translation-algorithm",
     "title": "Test, Build, Deploy",
     "section": "Translation Algorithm",
-    "text": "Translation Algorithm\nHow do we go from value changes to traces?\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file.\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file."
+    "text": "Translation Algorithm\nHow do we go from value changes to traces?\n\nTraverse to the enumeration of registers.\nInstantiate a data structure to store registers and values.\nWrite registers to a Daikon “declarations” file. (.decls)\nTraverse to value changes.\nFor each time point:\n\nRead each line, updating current register value.\nAppend current values to a Daikon “trace” file. (.dtrace)"
   },
   {
     "objectID": "slides.rjs.html#daikon",
     "href": "slides.rjs.html#daikon",
     "title": "Test, Build, Deploy",
     "section": "Daikon",
-    "text": "Daikon\n\nWe regard Daikon as an example of a state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as functions.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
+    "text": "Daikon\n\nWe regard Daikon as an example of a state-of-the-art specification miner.\nAs doi:10.1016/j.scico.2007.01.015, Daikon has ~1600 citations.\nIntended for use in Java\n\nModel registers as software level variables\nModel time slices (usually some number of nanoseconds) as methods.\n\n\n\n\n`timescale 1 ns / 1 ps\n\nmodule acw #\n(\n  //-- base address\n  input wire[31 : 0] r_base_addr_wire,\n  input wire[31 : 0] w_base_addr_wire,\n  //-- num transaction\n  input wire[15 : 0] r_num_trans_wire,\n  input wire[15 : 0] w_num_trans_wire,\n  ...\n\npublic class Main {\n\n static void acw() {\n\n  //-- base address\n  long r_base_addr_wire; // long to get 64 bits\n  long w_base_addr_wire; // (32 data + room for -1)\n  //-- num transaction\n  int r_num_trans_wire; \n  int w_num_trans_wire; \n  ..."
   },
   {
     "objectID": "slides.rjs.html#podman-and-github-actions",
@@ -158,7 +158,7 @@
     "href": "slides.rjs.html#picorv32",
     "title": "Test, Build, Deploy",
     "section": "PicoRV32",
-    "text": "PicoRV32"
+    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nWe needed ~5 minutes to build the test container.\nSpecification generation took ~4 seconds locally and ~40 seconds remotely."
   },
   {
     "objectID": "slides.rjs.html#holdouts",

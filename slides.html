@@ -357,12 +357,12 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <ol type="1">
 <li>Traverse to the enumeration of registers.</li>
 <li>Instantiate a data structure to store registers and values.</li>
-<li>Write registers to a Daikon “declarations” file.</li>
+<li>Write registers to a Daikon “declarations” file. (<code>.decls</code>)</li>
 <li>Traverse to value changes.</li>
 <li>For each time point:
 <ol type="1">
 <li>Read each line, updating current register value.</li>
-<li>Append current values to a Daikon “trace” file.</li>
+<li>Append current values to a Daikon “trace” file. (<code>.dtrace</code>)</li>
 </ol></li>
 </ol>
 </section>
@@ -374,7 +374,7 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <li>Intended for use in Java
 <ul>
 <li>Model registers as software level variables</li>
-<li>Model time slices (usually some number of nanoseconds) as functions.</li>
+<li>Model time slices (usually some number of nanoseconds) as methods.</li>
 </ul></li>
 </ul>
 <div class="columns">
@@ -393,7 +393,7 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Main <span class="op">{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">static</span> <span class="dt">void</span> acw <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">acw</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">//-- base address</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">long</span> r_base_addr_wire<span class="op">;</span> <span class="co">// long to get 64 bits</span></span>
@@ -436,6 +436,70 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </ul>
 <section id="picorv32" class="level2">
 <h2 class="anchored" data-anchor-id="picorv32">PicoRV32</h2>
+<ul>
+<li>A 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.</li>
+<li>Basically a minimal full-featured processor design suitable for FPGA or ASIC.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>PicoRV32 size
+<ul>
+<li>232 registers</li>
+<li>3049 lines of Verilog</li>
+</ul></li>
+<li>Testbench size
+<ul>
+<li>2201 cycles</li>
+<li>86 lines of Verilog</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Trace and specification size</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>lines</th>
+<th>words</th>
+<th>bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.vcd</td>
+<td>30356</td>
+<td>46200</td>
+<td>269184</td>
+</tr>
+<tr class="even">
+<td>.decls</td>
+<td>2219</td>
+<td>4434</td>
+<td>39059</td>
+</tr>
+<tr class="odd">
+<td>.dtrace</td>
+<td>2936134</td>
+<td>2931732</td>
+<td>17474090</td>
+</tr>
+<tr class="even">
+<td>spec</td>
+<td>1846</td>
+<td>5780</td>
+<td>71988</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>We needed ~5 minutes to build the test container.</li>
+<li>Specification generation took ~4 seconds locally and ~40 seconds remotely.</li>
+</ul>
 </section>
 <section id="holdouts" class="level2">
 <h2 class="anchored" data-anchor-id="holdouts">Holdouts</h2>
