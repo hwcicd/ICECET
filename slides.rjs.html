@@ -582,8 +582,9 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </ul></li>
 </ul>
 </section>
-<section id="script" class="slide level2">
-<h2>Script</h2>
+<section id="translation-algorithm" class="slide level2">
+<h2>Translation Algorithm</h2>
+<p>How do we go from value changes to traces?</p>
 <ol type="1">
 <li>Traverse to the enumeration of registers.</li>
 <li>Instantiate a data structure to store registers and values.</li>
@@ -599,7 +600,7 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <section id="daikon" class="slide level2">
 <h2>Daikon</h2>
 <ul>
-<li>We regard Daikon as an example of a current or former state-of-the-art specification miner.</li>
+<li>We regard Daikon as an example of a state-of-the-art specification miner.</li>
 <li>As <a href="http://dx.doi.org/10.1016/j.scico.2007.01.015">doi:10.1016/j.scico.2007.01.015</a>, Daikon has ~1600 citations.</li>
 <li>Intended for use in Java
 <ul>
@@ -638,7 +639,11 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <h2>Podman and GitHub Actions</h2>
 <ul>
 <li>We fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.</li>
-<li>Specifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.</li>
+<li>Specifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.
+<ul>
+<li>Around 4 seconds locally - so most time is spent spinning up our image.</li>
+<li><em>Probably</em> much faster on premium (non-academic) plans.</li>
+</ul></li>
 <li>Makefiles tend to be 1-10 lines of code</li>
 <li>The Containerfile, Python script, and GitHub YAML are 10-100.</li>
 </ul>
@@ -656,6 +661,7 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <ul>
 <li>Developer time to get the process working on a new design.</li>
 <li>Cloud costs in data and compute.</li>
+<li>Specification size.</li>
 </ul></li>
 </ul>
 </section>
