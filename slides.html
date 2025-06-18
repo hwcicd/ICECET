@@ -274,35 +274,37 @@ A software quality tool that automatical generates specifications from traces
 <li>Specify hardware design as <em>rules</em> over <em>registers</em></li>
 </ul>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode email code-with-copy"><code class="sourceCode email"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(* Extended Backus–Naur *)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rule = test | isin | mult | line</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>test = reg, eqs, reg</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     | reg, eqs, nat</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>isin = reg, "∈ {", nat, ",", nat, "}"</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     | reg, "∈ {", nat, ",", nat, ",", nat "}"</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mult = reg, "≡ 0 (mod", reg, ")"</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>line = reg, "+", reg, "×", reg, </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            "-", reg, "+", nat, "= 0"</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>reg : string</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>nat : natural</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:45%;">
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rule = test | isin | mult | line</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>test = reg, eqs, reg</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     | reg, eqs, nat</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>isin = reg, "∈ {", nat, ",", nat, "}"</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>     | reg, "∈ {", nat, ",", nat, ",", nat "}"</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>mult = reg, "≡ 0 (mod", reg, ")"</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>line = reg, "+", reg, "×", reg, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            "-", reg, "+", nat, "= 0"</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>reg : string</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>nat : natural</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>eqs = "=" | "≠" | "&lt;" | "⋜" | "&gt;" | "⋝"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode email code-with-copy"><code class="sourceCode email"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Examples</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wr = -1</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>wr &lt; trap</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>wr ⋜ imem</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>trap ⋝ imem</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>trap ≠ csr</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>out ∈ { -1, 0 }</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>status ∈ { -1, 0, 6144 }</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>clk % imem = 0</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>clk + 4 * csr - 2 * pc + 3 = 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>wr = -1</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>wr &lt; trap</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>wr ⋜ imem</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>trap ⋝ imem</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>trap ≠ csr</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>out ∈ { -1, 0 }</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>status ∈ { -1, 0, 6144 }</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>clk % imem = 0</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>clk + 4 * csr - 2 * pc + 3 = 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>-1</code> denotes a non-numeric hardware value (for uninitalized registers)</li>
 </ul>
@@ -412,10 +414,11 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <li>Specifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.
 <ul>
 <li>Around 4 seconds locally - so most time is spent spinning up our image.</li>
-<li><em>Probably</em> much faster on premium (non-academic) plans.</li>
+<li>Around ~70 KB in size.</li>
 </ul></li>
 <li>Makefiles tend to be 1-10 lines of code</li>
 <li>The Containerfile, Python script, and GitHub YAML are 10-100.</li>
+<li>Our container was ~1.7 GB.</li>
 </ul>
 </section>
 </section>
@@ -437,7 +440,7 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 <section id="picorv32" class="level2">
 <h2 class="anchored" data-anchor-id="picorv32">PicoRV32</h2>
 <ul>
-<li>A 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.</li>
+<li>A 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional Multiply and Divide (M) and Compressed (C) extensions.</li>
 <li>Basically a minimal full-featured processor design suitable for FPGA or ASIC.</li>
 </ul>
 <div class="columns">
@@ -496,16 +499,127 @@ We used the Daikon invariant detector which imposes a JVM dependency.
 </table>
 </div>
 </div>
-<ul>
-<li>We needed ~5 minutes to build the test container.</li>
-<li>Specification generation took ~4 seconds locally and ~40 seconds remotely.</li>
-</ul>
 </section>
 <section id="holdouts" class="level2">
 <h2 class="anchored" data-anchor-id="holdouts">Holdouts</h2>
+<ul>
+<li>To evaluate (1) Generalizability and (2) Performance we checked our framework on two other designs.
+<ul>
+<li>NERV - Another RISC-V core</li>
+<li>AKER - An AXI access control module.</li>
+</ul></li>
+<li>We had to modify one line in the Containerfile (and rebuild for 5 minutes) for AKER and add one line to our Makefile to support SystemVerilog extensions but made no other changes.</li>
+<li>We regard this as a successful proof of concept, and are now seeking partners with larger designs and more powerful compute resources to evaluate scaling.</li>
+</ul>
+<blockquote class="blockquote">
+<p>We believe specification generation time scales linearly with the product of trace length and number of registers, and specification size scales with the log of the product.</p>
+</blockquote>
 </section>
 <section id="performance" class="level2">
 <h2 class="anchored" data-anchor-id="performance">Performance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>NERV size
+<ul>
+<li>549 registers</li>
+<li>1267 lines of Verilog</li>
+</ul></li>
+<li>Testbench size
+<ul>
+<li>19 cycles</li>
+<li>155 lines of SystemVerilog</li>
+</ul></li>
+<li>Trace and specification size</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>lines</th>
+<th>words</th>
+<th>bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.vcd</td>
+<td>30356</td>
+<td>46200</td>
+<td>269184</td>
+</tr>
+<tr class="even">
+<td>.decls</td>
+<td>2219</td>
+<td>4434</td>
+<td>39059</td>
+</tr>
+<tr class="odd">
+<td>.dtrace</td>
+<td>2936134</td>
+<td>2931732</td>
+<td>17474090</td>
+</tr>
+<tr class="even">
+<td>spec</td>
+<td>1846</td>
+<td>5780</td>
+<td>71988</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>AKER size
+<ul>
+<li>432 registers</li>
+<li>2002 lines of Verilog</li>
+</ul></li>
+<li>Testbench size
+<ul>
+<li>1055 cycles</li>
+<li>527 lines of SystemVerilog</li>
+</ul></li>
+<li>Trace and specification size</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>lines</th>
+<th>words</th>
+<th>bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.vcd</td>
+<td>6290</td>
+<td>10990</td>
+<td>53007</td>
+</tr>
+<tr class="even">
+<td>.decls</td>
+<td>3519</td>
+<td>7034</td>
+<td>62829</td>
+</tr>
+<tr class="odd">
+<td>.dtrace</td>
+<td>2230270</td>
+<td>2228160</td>
+<td>13840288</td>
+</tr>
+<tr class="even">
+<td>spec</td>
+<td>5594</td>
+<td>17986</td>
+<td>181149</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 </section>
 <section id="summary" class="level1">

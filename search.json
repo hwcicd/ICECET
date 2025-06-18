@@ -32,7 +32,7 @@
     "href": "slides.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\n\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\n\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.html#graph-representation",
@@ -67,28 +67,28 @@
     "href": "slides.html#podman-and-github-actions",
     "title": "Test, Build, Deploy",
     "section": "Podman and GitHub Actions",
-    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\n\nAround 4 seconds locally - so most time is spent spinning up our image.\nProbably much faster on premium (non-academic) plans.\n\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100."
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\n\nAround 4 seconds locally - so most time is spent spinning up our image.\nAround ~70 KB in size.\n\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100.\nOur container was ~1.7 GB."
   },
   {
     "objectID": "slides.html#picorv32",
     "href": "slides.html#picorv32",
     "title": "Test, Build, Deploy",
     "section": "PicoRV32",
-    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\n\nWe needed ~5 minutes to build the test container.\nSpecification generation took ~4 seconds locally and ~40 seconds remotely."
+    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988"
   },
   {
     "objectID": "slides.html#holdouts",
     "href": "slides.html#holdouts",
     "title": "Test, Build, Deploy",
     "section": "Holdouts",
-    "text": "Holdouts"
+    "text": "Holdouts\n\nTo evaluate (1) Generalizability and (2) Performance we checked our framework on two other designs.\n\nNERV - Another RISC-V core\nAKER - An AXI access control module.\n\nWe had to modify one line in the Containerfile (and rebuild for 5 minutes) for AKER and add one line to our Makefile to support SystemVerilog extensions but made no other changes.\nWe regard this as a successful proof of concept, and are now seeking partners with larger designs and more powerful compute resources to evaluate scaling.\n\n\nWe believe specification generation time scales linearly with the product of trace length and number of registers, and specification size scales with the log of the product."
   },
   {
     "objectID": "slides.html#performance",
     "href": "slides.html#performance",
     "title": "Test, Build, Deploy",
     "section": "Performance",
-    "text": "Performance"
+    "text": "Performance\n\n\n\nNERV size\n\n549 registers\n1267 lines of Verilog\n\nTestbench size\n\n19 cycles\n155 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nAKER size\n\n432 registers\n2002 lines of Verilog\n\nTestbench size\n\n1055 cycles\n527 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n6290\n10990\n53007\n\n\n.decls\n3519\n7034\n62829\n\n\n.dtrace\n2230270\n2228160\n13840288\n\n\nspec\n5594\n17986\n181149"
   },
   {
     "objectID": "slides.rjs.html#problem-statement",
@@ -116,7 +116,7 @@
     "href": "slides.rjs.html#specification",
     "title": "Test, Build, Deploy",
     "section": "Specification",
-    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
+    "text": "Specification\n\nSpecify hardware design as rules over registers\n\n\n\n(* Extended Backus–Naur *)\n\nrule = test | isin | mult | line\n\ntest = reg, eqs, reg\n     | reg, eqs, nat\n\nisin = reg, \"∈ {\", nat, \",\", nat, \"}\"\n     | reg, \"∈ {\", nat, \",\", nat, \",\", nat \"}\"\n\nmult = reg, \"≡ 0 (mod\", reg, \")\"\n\nline = reg, \"+\", reg, \"×\", reg, \n            \"-\", reg, \"+\", nat, \"= 0\"\n\nreg : string\nnat : natural\neqs = \"=\" | \"≠\" | \"&lt;\" | \"⋜\" | \"&gt;\" | \"⋝\"\n\n# Examples\n\nwr = -1\nwr &lt; trap\nwr ⋜ imem\ntrap ⋝ imem\ntrap ≠ csr\nout ∈ { -1, 0 }\nstatus ∈ { -1, 0, 6144 }\nclk % imem = 0\nclk + 4 * csr - 2 * pc + 3 = 0\n\n-1 denotes a non-numeric hardware value (for uninitalized registers)"
   },
   {
     "objectID": "slides.rjs.html#graph-representation",
@@ -151,27 +151,27 @@
     "href": "slides.rjs.html#podman-and-github-actions",
     "title": "Test, Build, Deploy",
     "section": "Podman and GitHub Actions",
-    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\n\nAround 4 seconds locally - so most time is spent spinning up our image.\nProbably much faster on premium (non-academic) plans.\n\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100."
+    "text": "Podman and GitHub Actions\n\nWe fully automate the whole process with Makefiles, a CI/CD container, and GitHub actions.\nSpecifications are generally generated in around 40 seconds over our 100-1000 register size designs on commit.\n\nAround 4 seconds locally - so most time is spent spinning up our image.\nAround ~70 KB in size.\n\nMakefiles tend to be 1-10 lines of code\nThe Containerfile, Python script, and GitHub YAML are 10-100.\nOur container was ~1.7 GB."
   },
   {
     "objectID": "slides.rjs.html#picorv32",
     "href": "slides.rjs.html#picorv32",
     "title": "Test, Build, Deploy",
     "section": "PicoRV32",
-    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nWe needed ~5 minutes to build the test container.\nSpecification generation took ~4 seconds locally and ~40 seconds remotely."
+    "text": "PicoRV32\n\nA 32 bit processor implementing the RV32I (RISC-V Integer) instruction set architecture (ISA) standard with optional Multiply and Divide (M) and Compressed (C) extensions.\nBasically a minimal full-featured processor design suitable for FPGA or ASIC.\n\n\n\n\nPicoRV32 size\n\n232 registers\n3049 lines of Verilog\n\nTestbench size\n\n2201 cycles\n86 lines of Verilog\n\n\n\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988"
   },
   {
     "objectID": "slides.rjs.html#holdouts",
     "href": "slides.rjs.html#holdouts",
     "title": "Test, Build, Deploy",
     "section": "Holdouts",
-    "text": "Holdouts"
+    "text": "Holdouts\n\nTo evaluate (1) Generalizability and (2) Performance we checked our framework on two other designs.\n\nNERV - Another RISC-V core\nAKER - An AXI access control module.\n\nWe had to modify one line in the Containerfile (and rebuild for 5 minutes) for AKER and add one line to our Makefile to support SystemVerilog extensions but made no other changes.\nWe regard this as a successful proof of concept, and are now seeking partners with larger designs and more powerful compute resources to evaluate scaling.\n\n\nWe believe specification generation time scales linearly with the product of trace length and number of registers, and specification size scales with the log of the product."
   },
   {
     "objectID": "slides.rjs.html#performance",
     "href": "slides.rjs.html#performance",
     "title": "Test, Build, Deploy",
     "section": "Performance",
-    "text": "Performance"
+    "text": "Performance\n\n\n\nNERV size\n\n549 registers\n1267 lines of Verilog\n\nTestbench size\n\n19 cycles\n155 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n30356\n46200\n269184\n\n\n.decls\n2219\n4434\n39059\n\n\n.dtrace\n2936134\n2931732\n17474090\n\n\nspec\n1846\n5780\n71988\n\n\n\n\n\nAKER size\n\n432 registers\n2002 lines of Verilog\n\nTestbench size\n\n1055 cycles\n527 lines of SystemVerilog\n\nTrace and specification size\n\n\n\n\n\nlines\nwords\nbytes\n\n\n\n\n.vcd\n6290\n10990\n53007\n\n\n.decls\n3519\n7034\n62829\n\n\n.dtrace\n2230270\n2228160\n13840288\n\n\nspec\n5594\n17986\n181149"
   }
 ]
